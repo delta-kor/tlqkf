@@ -5,3 +5,7 @@
   box-sizing: border-box;
   -webkit-tap-highlight-color: transparent;
 }
+
+body {
+  background: #f5f5f5;
+}
