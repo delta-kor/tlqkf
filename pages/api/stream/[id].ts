@@ -46,7 +46,7 @@ export default async function handler(
   let m3u8Data = m3u8.data;
   m3u8Data = m3u8Data.replace(
     'https://whiterabbit.music-flo.com/track/',
-    `https://delta-kor-humble-waffle-64p4rx6wp4jhrg77-3000.preview.app.github.dev/api/key/${data.data.signature}/${data.data.nonce}/`
+    `/api/key/${data.data.signature}/${data.data.nonce}/`
   );
   m3u8Data = m3u8Data.replace(/sq(\d+).ts/g, m3u8BaseUrl + '/sq$1.ts');
 
