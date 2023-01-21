@@ -14,3 +14,9 @@
   color: #303030;
   user-select: none;
 }
+
+@media only screen and (max-width: 600px) {
+  .header {
+    font-size: 64px;
+  }
+}

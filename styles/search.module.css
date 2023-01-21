@@ -38,18 +38,27 @@
   flex-direction: column;
   justify-content: center;
   gap: 2px;
+  min-width: 0;
 }
 
 .title {
   font-size: 20px;
   font-weight: 700;
   color: #303030;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .artist {
   font-size: 14px;
   font-weight: 400;
   color: #757575;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .right {
@@ -63,4 +72,19 @@
   font-size: 14px;
   font-weight: 400;
   color: #757575;
+}
+
+@media only screen and (max-width: 600px) {
+  .image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .title {
+    font-size: 16px;
+  }
+
+  .artist {
+    font-size: 12px;
+  }
 }
