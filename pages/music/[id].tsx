@@ -1,6 +1,7 @@
+import Hls from 'hls.js';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from '../../styles/music.module.css';
 
 const MusicPage: NextPage = () => {
@@ -9,10 +10,21 @@ const MusicPage: NextPage = () => {
 
   const [data, setData] = useState<any>(null);
 
+  const audioRef = useRef<HTMLVideoElement>(null);
+
   useEffect(() => {
     if (!id) return;
     loadData();
   }, [id]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!data || !audio) return;
+
+    const hls = new Hls();
+    hls.loadSource(`/api/stream/${data.id}`);
+    hls.attachMedia(audio);
+  }, [data]);
 
   const handleBackClick = () => {
     router.back();
@@ -39,6 +51,7 @@ const MusicPage: NextPage = () => {
           <img className={styles.image} src={data.image} />
           <div className={styles.title}>{data.title}</div>
           <div className={styles.artist}>{data.artist}</div>
+          <audio ref={audioRef} className={styles.audio} controls></audio>
         </div>
       ) : (
         <>데이터를 불러오는 중</>

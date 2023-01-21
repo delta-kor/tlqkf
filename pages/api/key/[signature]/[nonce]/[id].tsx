@@ -18,6 +18,7 @@ export default async function handler(
       'x-mcp-signature': signature,
       'x-mcp-user-id': process.env.FLO_USER_ID,
     },
+    responseType: 'arraybuffer',
     validateStatus: () => true,
   });
 
@@ -27,5 +28,8 @@ export default async function handler(
   }
 
   const data = response.data;
-  res.status(200).send(data);
+  res
+    .status(200)
+    .setHeader('Content-Type', 'application/octet-stream')
+    .send(data);
 }

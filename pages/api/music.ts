@@ -26,6 +26,7 @@ export default async function handler(
   }
 
   const result = {
+    id: data.data.id,
     title: data.data.name,
     playTime: data.data.playTime,
     artist: data.data.representationArtist.name,
