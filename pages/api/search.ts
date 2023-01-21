@@ -27,6 +27,11 @@ export default async function handler(
 
   const data = response.data;
 
+  if (!data.data.list) {
+    res.status(404).json({ ok: false, message: '검색 결과가 없어요' });
+    return;
+  }
+
   const list = data.data.list[0].list;
   const result = [];
 

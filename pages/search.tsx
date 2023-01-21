@@ -11,6 +11,7 @@ const SearchPage: NextPage = () => {
   const [data, setData] = useState<any[]>([]);
 
   useEffect(() => {
+    if (!q) return;
     loadData();
   }, [q]);
 
@@ -25,12 +26,20 @@ const SearchPage: NextPage = () => {
     }
   };
 
+  const handleItemClick = (id: string) => {
+    router.push(`/music/${id}`);
+  };
+
   return (
     <div className={styles.wrapper}>
       <Search initial={q} />
       <div className={styles.result}>
         {data.map((item) => (
-          <div className={styles.item} key={item.id}>
+          <div
+            className={styles.item}
+            onClick={() => handleItemClick(item.id)}
+            key={item.id}
+          >
             <img className={styles.image} src={item.image} />
             <div className={styles.content}>
               <div className={styles.title}>{item.title}</div>
