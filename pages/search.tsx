@@ -20,7 +20,6 @@ const SearchPage: NextPage = () => {
     const data = await res.json();
     if (data.ok) {
       setData(data.data);
-      console.log(data.data);
     } else {
       alert(data.message || '오류가 발생했어요');
     }

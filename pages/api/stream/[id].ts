@@ -50,8 +50,6 @@ export default async function handler(
   );
   m3u8Data = m3u8Data.replace(/sq(\d+).ts/g, m3u8BaseUrl + '/sq$1.ts');
 
-  console.log(req.headers);
-
   res
     .status(200)
     .setHeader('Content-Type', 'application/vnd.apple.mpegurl')
