@@ -38,9 +38,10 @@ const MusicPage: NextPage = () => {
         <div className={styles.content}>
           <img className={styles.image} src={data.image} />
           <div className={styles.title}>{data.title}</div>
+          <div className={styles.artist}>{data.artist}</div>
         </div>
       ) : (
-        <></>
+        <>데이터를 불러오는 중</>
       )}
     </div>
   );
