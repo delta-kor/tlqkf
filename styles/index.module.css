@@ -15,14 +15,36 @@
   user-select: none;
 }
 
-.search {
+.content {
   width: 100%;
-  max-width: 600px;
+  display: flex;
+  max-width: 640px;
+  align-items: center;
+  gap: 8px;
+}
+
+.search {
+  flex-grow: 1;
+  height: 68px;
   border: 4px solid #e7e7e7;
   padding: 16px 24px;
   font-size: 24px;
   font-weight: 700;
   color: #303030;
   background: #fdfdfd;
+  border-radius: 8px;
+}
+
+.submit {
+  height: 68px;
+  line-height: 68px;
+  padding: 0 16px;
+  align-items: center;
+  background: #e7e7e7;
+  font-size: 20px;
+  font-weight: 700;
+  color: #303030;
+  cursor: pointer;
+  user-select: none;
   border-radius: 8px;
 }
