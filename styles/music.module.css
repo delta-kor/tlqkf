@@ -18,3 +18,24 @@
   cursor: pointer;
   user-select: none;
 }
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8px;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  border-radius: 8px;
+}
+
+.title {
+  margin: 8px 0 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #303030;
+  text-align: center;
+}

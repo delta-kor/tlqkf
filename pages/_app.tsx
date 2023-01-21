@@ -6,8 +6,13 @@ const font = Noto_Sans_KR({ subsets: ['latin'], weight: ['400', '700'] });
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={font.className}>
+    <>
+      <style jsx global>{`
+        html {
+          font-family: ${font.style.fontFamily};
+        }
+      `}</style>
       <Component {...pageProps} />
-    </div>
+    </>
   );
 }
