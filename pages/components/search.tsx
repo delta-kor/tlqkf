@@ -12,7 +12,7 @@ const Search: React.FC<Props> = ({ initial }) => {
 
   const handleSubmit = () => {
     if (!search) return;
-    router.push(`/search?q=${search}`);
+    router.push(`/search?q=${encodeURI(search)}`);
   };
 
   return (
